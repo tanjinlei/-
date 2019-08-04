@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        你好
+    </div>
+    <script>
+    // document.write('<h1>很好</h1>')
+// var nnn = document.querySelector('div')
+// nnn.innerHTML += '<h1>很好</h1>' 
+var num = document.createElement('h1')
+num.innerText = '很好'
+var body = document.querySelector('body')
+body.appendChild(num)
+    </script>
+</body>
+</html>

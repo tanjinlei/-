@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+       .box{
+           width: 43px;
+           height: 23px;
+        position: relative;
+        
+    }
+    .box2 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        display: none;
+        position: absolute;
+    }
+
+</style>
+
+<body>
+    <div class="box" id='box'>
+        <button id='btn'>隐藏</button>
+        <div class="box2" id='box2'></div>
+    </div>
+    <script>
+    // 获取元素
+    var box = document.getElementById('box')
+    var btn = document.getElementById('btn')
+    var box2 = document.getElementById('box2')
+    // 三要素
+    box.onmouseover=function(){
+        box2.style.display ='block'
+        btn.innerText='展开'
+    }
+    box.onmouseout=function(){
+        box2.style.display ='none'
+        btn.innerText='隐藏'
+
+    }
+    </script>
+
+
+
+
+</body>
+
+</html>

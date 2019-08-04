@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+
+.mo {
+    border: 1px solid red;
+    background-color: yellow;
+    width: 400px;
+    height: 400px;
+    display: none;
+}
+</style>
+<body>
+        <input type="text" placeholder="请输入">
+        <div class="mo">
+            搜索提示框
+        </div>
+
+
+    <script>
+    var box = document.querySelector('.box')
+    var mo = document.querySelector('.mo')
+    var input = document.querySelector('input')
+    input.onfocus = function(){
+        mo.style.display = 'block'
+    }
+    input.onblur = function(){
+        mo.style.display = 'none'
+    }
+    </script>
+</body>
+</html>

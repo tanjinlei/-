@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #packet {
+            width: 200px;
+            line-height: 50px;
+            background-color: #900;
+            font-size: 20px;
+            color: #fff;
+            border: 10px solid #930;
+            text-align: center;
+            /* 定位属性 */
+            position: fixed;
+            left: 100px;
+            top: 100px;
+        }
+
+        body {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 红包 -->
+    <div id="packet">
+        点击领取红包
+    </div>
+    <script>
+        // 通过鼠标移动事件，并获取鼠标坐标值。
+
+        var packet = document.querySelector("#packet");
+
+        document.addEventListener("mousemove", function (event) {
+            console.log(event);
+            // 通过事件对象获取鼠标坐标值
+            var x = event.clientX;
+            var y = event.clientY;
+            console.log(x, y);
+
+            // 把坐标值赋值给 红包的 left 和 top 属性
+            packet.style.left = x + 'px';
+            packet.style.top = y + 'px';
+
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .button1 {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+</style>
+
+<body>
+    <!-- <label for="mima">
+        请输入密码：
+    </label>
+    <input type="password" id='mima'>
+    <input type="button" value="隐藏密码" id='my_mm'>
+    <script>
+        // 获取显示密码的ID名
+        var my_mm = document.getElementById('my_mm')
+        var mima = document.getElementById('mima')
+        my_mm.onclick = function (){
+           if(mima.type === "password" ){
+               mima.type = 'text'
+            my_mm.value = '显示密码'
+           }else {
+            mima.type = 'password'
+            my_mm.value = '隐藏密码'
+           }
+        }
+
+    </script> -->
+
+    <!-- <label for="mima">
+        请输入您的密码：
+    </label>
+    <input type="password" id='mima' placeholder="密码">
+    <button id='aniu'>隐藏密码</button>
+    <script>
+        // 获取元素
+        var aniu = document.getElementById('aniu')
+        var mima = document.getElementById('mima')
+
+        //  开始设置变化样式
+        aniu.onclick = function () {
+            if (mima.type === 'password') {
+                mima.type = 'text'
+                aniu.innerText = '显示密码'
+            } else {
+                mima.type = 'password'
+                aniu.innerText = '隐藏密码'
+            }
+        }
+    </script> -->
+
+    <!-- <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <script>
+        var buttons = document.getElementsByTagName('button')
+        for (var i = 0; i < buttons.length; i++) {
+            var num = buttons[i]
+            num.onclick = function () {
+
+                for (var i = 0; i < buttons.length; i++) {
+                    var num = buttons[i]
+                    num.className = ''
+                }
+                this.className = 'button1'
+            }
+        }
+    </script> -->
+
+    <button id='btn1'>按钮</button>
+    <button id='btn2'>按钮</button>
+    <button id='btn3'>按钮</button>
+    <script>
+        var btn1 = document.getElementById('btn1')
+        var btn2 = document.getElementById('btn2')
+        var btn3 = document.getElementById('btn3')
+        var nnn = function (){
+            this.className = 'button1'
+        }
+        btn1.onclick = nnn;
+        btn2.onclick = nnn;
+        btn3.onclick = nnn;
+    </script>
+</body>
+
+</html>

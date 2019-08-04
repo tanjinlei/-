@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father {
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+            position: relative;
+            margin: 20px;
+        }
+
+        .son {
+            width: 30px;
+            line-height: 30px;
+            background-color: skyblue;
+            text-align: center;
+            position: absolute;
+            right: -30px;
+            top: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 父盒子是广告分区， son 是关闭按钮 -->
+    <div class="father">
+        父级广告1
+        <div class="son">
+            x
+        </div>
+    </div>
+    <div class="father">
+        父级广告2
+        <div class="son">
+            x
+        </div>
+    </div>
+    <div class="father">
+        父级广告3
+        <div class="son">
+            x
+        </div>
+    </div>
+    <div class="father">
+        父级广告4
+        <div class="son">
+            x
+        </div>
+    </div>
+    <script>
+        // // 查找元素
+        // var sons = document.querySelectorAll('.son')
+        // // 遍历循环
+        // for (var i = 0; i < sons.length; i++) {
+        //     var num = sons[i]
+        //     num.onclick = function () {
+        //         // 添加删除
+        //         this.parentElement.style.display = "none"
+        //     }
+        // }
+        // var sons = document.querySelectorAll(".son")
+        // // 循环遍历
+        // for (var i=0 ; i<sons.length ; i++){
+        //     // 添加点击事件
+        //     var num = sons[i]
+        //     num.onclick = function(){
+        //         this.parentElement.style.display = 'none'
+        //     }
+        // }
+
+        
+        // var sons = document.querySelectorAll('.son')
+        
+        // // forEach遍历每个子元素
+        // sons.forEach(function(item,index){
+        //     // 添加点击事件
+        //     item.onclick = function(){
+        //         this.parentElement.style.display = 'none'
+        //     }
+        // })
+        //    ES 6 箭头函数写法
+        // sons.forEach(item => {
+        //     item.onclick = function () {
+        //         this.parentElement.style.display = 'none';
+        //     }
+        // });
+
+    </script>
+</body>
+
+</html>

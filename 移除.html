@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #packet {
+            width: 200px;
+            line-height: 50px;
+            background-color: #900;
+            font-size: 20px;
+            color: #fff;
+            border: 10px solid #930;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 红包 -->
+    <div id="packet">
+        点击领取红包
+    </div>
+    
+    <input id="btn" type="button" value="点我能继续抽奖">
+
+    <script>
+        // // 获取元素
+        // var packet = document.querySelector('#packet')
+        // // 设置事件
+        // packet.onclick = function(){
+        //     alert('大奖')
+        //     // 现在我们需要设置点过一次之后无法继续点击的操作
+        //     packet.onclick = null
+        // }
+
+        // 现在我们需要有一个事件：在点击这个事件之后，我们可以再次点击红包
+        // 获取元素
+        var packet = document.querySelector('#packet')
+        var btn = document.querySelector('#btn')
+        
+        // 点击领取红包
+        var fn = function(){
+            alert('大奖')
+            packet.onclick = null
+        }
+
+        // 绑定事件
+        packet.onclick = fn
+
+        // 下面的按钮
+        btn.onclick = function(){
+            alert('再次机会')
+            packet.onclick = fn
+        }
+        // 这相当于一个循环：设定一个需要再次出现的funtion函数，然后进行连接
+    </script>
+</body>
+
+</html>

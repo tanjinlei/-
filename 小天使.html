@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 500px;
+            height: 500px;
+            /* background-color: pink; */
+            background-image: linear-gradient(0, red, blue);
+        }
+
+        /* 图片需要定位, left top 才生效 */
+        img {
+            background-color: pink;
+            position: fixed;
+        }
+
+        body {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <img src="./light/on.gif" alt="" srcset="">
+    </div>
+    <script>
+
+        // 1. 查找元素
+        var box = document.querySelector("#box");
+        var img = document.querySelector("img");
+
+        var body = document.body;
+
+        // 2. 给元素添加<鼠标移动>事件
+        // document 事件源 可以全局触发
+        document.addEventListener("mousemove", function (event) {
+            // console.log(event);      事件对象的手册,检查属性名
+            // 3. <事件对象> 获取鼠标坐标值 x,y
+            var x = event.clientX;
+            var y = event.clientY;
+
+            // 4. 把坐标值赋值给 图片, 图片前提需要定位
+            img.style.left = x + "px";
+            img.style.top = y + "px";
+            // console.log(x, y);
+        });
+
+        //      body        是有实体大小,body的高度,其实是被其他标签撑出来的,不能代表全局
+        //      document    也可以当做事件源,代表整个网页文档, 绑定给 document 可以全局触发
+
+    </script>
+</body>
+
+</html>

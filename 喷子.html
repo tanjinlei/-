@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    /* ul {
+        list-style: none;
+    } */
+    </style>
+</head>
+<body>
+    <input type="button" value="按钮" >
+    <input type="text" value='' placeholder="请输入...">
+    <ul>
+        <li>评论</li>
+    </ul>
+
+    <script>
+    // 获取元素
+    var btn = document.querySelector('[type="button"]')
+    var val = document.querySelector('[type="text"]')
+    var ul = document.querySelector('ul')
+//   创造触发事件
+        btn.onclick = function (){
+            // 获取输入框
+            var pinglun = val.value 
+            if(val.value !== ''){
+           // 添加到ul里面
+            // 创建一个li
+            var li = document.createElement('li')
+            // li获取内容
+            li.innerText = pinglun
+            ul.appendChild(li)
+    
+            // ul.innerHTML += "<li>" +pinglun+ "</li>"
+            // 每次点击之后清空输入框
+            val.value =''
+            }else {
+
+            }
+        }
+   
+    </script>
+</body>
+</html>

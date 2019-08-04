@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习</title>
+</head>
+<style>
+    ul {
+        list-style: none;
+    }
+
+    .btn1 {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border: 2px solid black;
+    }
+
+    .btn2 {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+    }
+
+    .btn3 {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border: 2px solid black;
+    }
+
+    .btn4 {
+        width: 80px;
+        height: 80px;
+        color: green;
+        font-size: 30px;
+        background-color: yellow;
+        line-height: 80px;
+        text-align: center;
+    }
+
+    .btn5 {
+        width: 80px;
+        height: 80px;
+        color: green;
+        font-size: 30px;
+        background-color: red;
+        line-height: 80px;
+        text-align: center;
+    }
+
+    .btn6 {
+        width: 80px;
+        height: 80px;
+        font-size: 30px;
+        color: red;
+        background-color: blue;
+        line-height: 80px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <input type="button" value="类" id='input'>
+    <input type="button" value="类" id='input'>
+    <input type="button" value="类" id='input'>
+    <div id='btn1' class="btn1  btn4">盒子</div>
+    <!-- <div id='btn2' class="btn2">盒子</div>
+    <div id='btn3' class="btn3">盒子</div> -->
+
+    <!-- <div id='btt'> -->
+    <!-- <ul>
+            <li>
+                你好
+            </li>
+            <li>
+                你很好
+            </li>
+        </ul> -->
+
+    <!-- </div> -->
+    <script>
+        // debugger
+        var boxs = document.getElementsByTagName('div')
+        var inputs = document.getElementsByTagName('input')
+        inputs[0].onclick = function () {
+            boxs[0].classList.add('btn5');
+        }
+        inputs[1].onclick = function () {
+            boxs[0].classList.remove('btn5');
+        }
+        inputs[2].onclick = function () {
+            boxs[0].classList.toggle('btn5');
+        }
+        // var btn2 = document.getElementById('btn2')
+        // var btn3 = document.getElementById('btn3')
+
+        // var nnn = function (){
+        //     this.className = 'btn4'
+        // }
+        // btn1.onclick = nnn;
+        // btn2.onclick = nnn;
+        // btn3.onclick = nnn;
+
+        // var divs = document.getElementsByTagName('div')
+
+
+        // var btt = document.getElementById('btt')
+        // btn.onclick = function () {
+
+        //     // btt.innerHTML = '<ul><li>不好</li><li>你不好</li></ul>'
+        //     // btt.style.color = 'red'
+        //     btt.style.display = 'none';
+        //     btn.style.display = 'none';
+        // }
+    </script>
+</body>
+
+</html>
