@@ -99,5 +99,13 @@ var bigImg = document.querySelector('.bigImg')
         // 右边大盒子
         big.style.display = 'none'
     })
-    
+
+    // 设置鼠标在盒子中移动
+    box.addEventListener('mousemove',function(event){
+        var x = event.pageX - box.offsetLeft - mask.offsetWidth/2
+        var y = event.pageY - box.offsetTop - mask.offsetHeight/2
+        mask.style.left = x +'px'
+        mask.style.top = y +'px'
+
+    })
 </script>
