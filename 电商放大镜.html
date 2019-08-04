@@ -75,25 +75,26 @@
         </div>
     </div>
 </body>
+
 </html>
 <script>
     // 获取元素
-var box = document.querySelector('.box')
-var small = document.querySelector('.small')
-var smallImg = document.querySelector('.smallImg')
-var mask = document.querySelector('.mask')
-var big = document.querySelector('.big')
-var bigImg = document.querySelector('.bigImg')
+    var box = document.querySelector('.box')
+    var small = document.querySelector('.small')
+    var smallImg = document.querySelector('.smallImg')
+    var mask = document.querySelector('.mask')
+    var big = document.querySelector('.big')
+    var bigImg = document.querySelector('.bigImg')
 
     // 设置并添加事件
-    box.addEventListener('mouseover', function(){
+    box.addEventListener('mouseover', function () {
         // 移入出现黄色方块
         mask.style.display = 'block'
         // 右边大盒子
         big.style.display = 'block'
     })
     // 移出时
-    box.addEventListener('mouseout', function(){
+    box.addEventListener('mouseout', function () {
         // 移入出现黄色方块
         mask.style.display = 'none'
         // 右边大盒子
@@ -101,11 +102,22 @@ var bigImg = document.querySelector('.bigImg')
     })
 
     // 设置鼠标在盒子中移动
-    box.addEventListener('mousemove',function(event){
-        var x = event.pageX - box.offsetLeft - mask.offsetWidth/2
-        var y = event.pageY - box.offsetTop - mask.offsetHeight/2
-        mask.style.left = x +'px'
-        mask.style.top = y +'px'
+    box.addEventListener('mousemove', function (event) {
+        var x = event.pageX - box.offsetLeft - mask.offsetWidth / 2
+        var y = event.pageY - box.offsetTop - mask.offsetHeight / 2
+        if (x < 0) x = 0
+        if (y < 0) y = 0
+        if(y > box.offsetHeight - mask.offsetHeight){
+            y = box.offsetHeight - mask.offsetHeight
+        }
+        if(x > box.offsetWidth - mask.offsetWidth){
+            x = box.offsetWidth - mask.offsetWidth
+        }
+        mask.style.left = x + 'px'
+        mask.style.top = y + 'px'
+
+        bigImg.style.left = -1 * bigImg.offsetWidth/smallImg.offsetWidth*x+'px'
+        bigImg.style.Top = -1 * bigImg.offsetWidth/smallImg.offsetWidth*y+'px'
 
     })
 </script>
