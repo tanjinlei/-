@@ -87,6 +87,17 @@ var bigImg = document.querySelector('.bigImg')
 
     // 设置并添加事件
     box.addEventListener('mouseover', function(){
-  confirm
+        // 移入出现黄色方块
+        mask.style.display = 'block'
+        // 右边大盒子
+        big.style.display = 'block'
     })
+    // 移出时
+    box.addEventListener('mouseout', function(){
+        // 移入出现黄色方块
+        mask.style.display = 'none'
+        // 右边大盒子
+        big.style.display = 'none'
+    })
+    
 </script>
