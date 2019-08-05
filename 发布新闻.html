@@ -63,6 +63,21 @@
                 // 3. 清空输入框内容 - 要修改元素的内容，需要通过元素的属性修改
                 txt.value = '';
             }
+            // 新建一个数组：存储数据
+            var newslist = []
+            // 获取时间
+            var now = +new Date()
+            // 创建对象字面量
+            var newsitem = {
+                // 每条数据的id
+                id:now,
+                // 每条数据的内容
+                content:res
+            }
+            // 往新闻列表后面添加新的新闻
+            newslist.push(newsitem)
+            console.log(newslist)
+
 
         } // btn 的事件书写结束
 
