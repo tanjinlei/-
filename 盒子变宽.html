@@ -42,7 +42,10 @@
         oldwidth += num(10, 100)
         // 赋值给宽
         box.style.width = oldwidth + 'px'
-    
+        // 设置到达一定宽度自动停止
+        if (oldwidth >= 1000) {
+            clearInterval(timerid)
+        }
     }, 24)
 
     // var fn = function () {
@@ -60,12 +63,6 @@
         var result = Math.floor(Math.random() * (m - n + 1) + n);
         return result
     }
-
-    box.onclick = timerid
-    box1.onclick = timerid
-    box2.onclick = timerid
-
-
 
 
     // box.onclick = fn
