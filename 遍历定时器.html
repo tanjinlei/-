@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+</style>
+
+<body>
+
+    <div id='box'>
+        盒子
+    </div>
+    <div id='box1'>
+        盒子
+    </div>
+    <div id='box2'>
+        盒子
+    </div>
+    
+</body>
+<script>
+    var mine = document.querySelectorAll('div')
+    // 设置对象
+    mine.forEach (function(item){
+    var timerid = setInterval(function () {
+        // 获取盒子原本的宽 解析成数值
+        var oldwidth = parseInt(getComputedStyle(item).width)
+        // 自增10
+        oldwidth += num(10, 100)
+        // 赋值给宽
+        item.style.width = oldwidth + 'px'
+        // 设置到达一定宽度自动停止
+        if (oldwidth >= 1000) {
+            clearInterval(timerid)
+        }
+    }, 1000)
+})
+
+
+    function num(n, m) {
+        var result = Math.floor(Math.random() * (m - n + 1) + n);
+        return result
+    }
+
+</script>
+
+</html>
