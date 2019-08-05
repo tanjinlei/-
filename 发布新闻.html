@@ -64,7 +64,7 @@
                 txt.value = '';
             }
             // 新建一个数组：存储数据
-            var newslist = []
+            var newslist = [] || JSON.parse(localStorage.getItem('newslist'))
             // 获取时间
             var now = +new Date()
             // 创建对象字面量
@@ -72,11 +72,13 @@
                 // 每条数据的id
                 id:now,
                 // 每条数据的内容
-                content:res
+                content:res,
             }
-            // 往新闻列表后面添加新的新闻
-            newslist.push(newsitem)
+            // 往新闻列表前面添加新的新闻
+            newslist.unshift(newsitem)
             console.log(newslist)
+            localStorage.setItem('newslist',JSON.stringify(newslist))
+            console.log(localStorage)
 
 
         } // btn 的事件书写结束

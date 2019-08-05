@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+div{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+}
+</style>
+<body>
+    <div id='box'>
+        盒子
+    </div>
+    <div id='box1'>
+        盒子
+    </div>
+    <div id='box2'>
+        盒子
+    </div>
+</body>
+<script>
+// 获取元素
+var box = document.querySelector('#box')
+var box1 = document.querySelector('#box1')
+var box2 = document.querySelector('#box2')
+// 设置对象
+var fn = addEventListener('click',function(){
+    // 获取盒子原本的宽
+    var mybox = getComputedStyle(this).width
+    // 解析成数值
+    var oldwidth =parseInt(mybox)
+    // 自增10
+    oldwidth += 10
+    // 赋值给宽
+    this.style.width = oldwidth +'px'
+})
+var box = fn
+// 设置对象
+// box.addEventListener('click',function(){
+//     // 获取盒子原本的宽
+//     var mybox = getComputedStyle(this).width
+//     // 解析成数值
+//     var oldwidth =parseInt(mybox)
+//     // 自增10
+//     oldwidth += 10
+//     // 赋值给宽
+//     this.style.width = oldwidth +'px'
+// })
+
+</script>
+</html>

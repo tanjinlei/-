@@ -1,0 +1,65 @@
+@@ -0,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="存数据">
+    <input type="button" value="取数据">
+    <script>
+        // localStorage 对象，是浏览器提供的对象，主要用于保存数据
+        console.log(localStorage);
+
+        // localStorage 属性
+        //      localStorage.length   本地存储中存放了多少数据
+
+        // localStorage  __proto__ 有对象的方法   
+        //      localStorage.setItem()      设置，存数据
+        //      localStorage.getItem()      获取，取数据
+        //      localStorage.removeItem()   移除，删数据
+        //      localStorage.clear()        清除，清除全部数据
+
+        // 存数据
+
+        var person = {
+            name: '学渣',
+            age: 18
+        }
+
+        // localStorage.setItem('键名称', 值);
+        // 注意两个参数的数据格式，
+        //      第一个参数：是字符串
+        //      第二个参数：往往是存放的变量
+        var inputs = document.querySelectorAll('input');
+
+        inputs[0].addEventListener('click', function () {
+            localStorage.setItem('person', JSON.stringify(person));
+            console.log(localStorage);
+        });
+
+        // 取数据
+        // var 返回值 = localStorage.getItem('键名称');
+        inputs[1].addEventListener('click', function () {
+            var res = JSON.parse(localStorage.getItem('person'));
+            console.log(res);
+            console.log(localStorage);
+        });
+
+
+        // localStorage 小结：
+        //      1. localStorage 是浏览器的本地存储功能。
+        //      2. 本地存储是永久存储，不会因为页面关闭而数据消失。
+        //      3. localStorage 只能存放字符串的数据，往往需要配合 JSON.stringify()。
+        //      4. localStorage 获取的也是字符串，往往需要配合 JSON.parse() 解析。
+
+
+    </script>
+</body>
+
+</html>
