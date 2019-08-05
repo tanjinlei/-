@@ -6,7 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+#box{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+}
+</style>
 <body>
-    
+    <div id='box'>
+        你好
+    </div>
+    <script>
+    var target = 500
+    var timerid = setInterval(function(){
+        // 获取盒子的宽度数据(获取元素的所有样式)
+        var boxwidth = parseInt(getComputedStyle(box).width)
+        // 累加
+        boxwidth += 10
+        // 将自增后的值进行赋值
+        box.style.width = boxwidth +'px'
+        // 设置当数据达到target的值的时候，停下
+        if(boxwidth>=target){
+            clearInterval(timerid)
+            // 当自增了量超过一定宽度的时候恢复到想要达到的宽度
+            box.style.width = target + 'px'
+        }
+    },100)
+    var tar = 500
+    var timermyid = setInterval(function(){
+        // 获取盒子的宽度数据(获取元素的所有样式)
+        var boxHeight = parseInt(getComputedStyle(box).height)
+        // 累加
+        boxHeight += 10
+        // 将自增后的值进行赋值
+        box.style.height = boxHeight +'px'
+        // 设置当数据达到target的值的时候，停下
+        if(boxHeight>=tar){
+            clearInterval(timermyid)
+            // 当自增了量超过一定宽度的时候恢复到想要达到的宽度
+            box.style.height = tar + 'px'
+        }
+    },100)
+    </script>
 </body>
 </html>
