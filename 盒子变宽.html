@@ -46,18 +46,18 @@
         if (oldwidth >= 1000) {
             clearInterval(timerid)
         }
-    }, 24)
+    }, 1000)
 
-    // var fn = function () {
-    //     // 获取盒子原本的宽
-    //     var mybox = getComputedStyle(box).width
-    //     // 解析成数值
-    //     var oldwidth = parseInt(mybox)
-    //     // 自增10
-    //     oldwidth += 10
-    //     // 赋值给宽
-    //     box.style.width = oldwidth + 'px'
-    // }
+    var fn = function () {
+        // 获取盒子原本的宽
+        var mybox = getComputedStyle(this).width
+        // 解析成数值
+        var oldwidth = parseInt(mybox)
+        // 自增10
+        oldwidth += 10
+        // 赋值给宽
+        this.style.width = oldwidth + 'px'
+    }
 
     function num(n, m) {
         var result = Math.floor(Math.random() * (m - n + 1) + n);
@@ -65,9 +65,8 @@
     }
 
 
-    // box.onclick = fn
-    // box1.onclick = fn
-    // box2.onclick = fn
+    box1.onclick = fn
+    box2.onclick = fn
 
 
 
