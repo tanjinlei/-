@@ -36,17 +36,18 @@ var fn = function(){
     // 解析成数值
     var oldwidth =parseInt(mybox)
     // 自增10
-    oldwidth += num(10,100)
+    oldwidth += num(1,100)
     // 赋值给宽
     this.style.width = oldwidth +'px'
 }
-box.onclick = fn
-box1.onclick = fn
-box2.onclick = fn
 function num(n, m) {
         var result = Math.floor(Math.random() * (m - n + 1) + n);
         return result
     }
+box.onclick = fn
+box1.onclick = fn
+box2.onclick = fn
+
 
 
 
