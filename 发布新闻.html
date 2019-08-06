@@ -66,14 +66,14 @@
 
                 // 在新闻发布后，保存到本地存储中
                 //  1. 由于新闻较多，所以我们用数据格式保存数据
-                                // 再存放数据之前，先获取本地存储的数据，并解析数据
+                // 再存放数据之前，先获取本地存储的数据，并JSON.parse()解析本地存储数据
                 // 通过短路运算  ||  确保没有数据的时候，就默认赋值 [] 空数组
                 var newsList = JSON.parse(localStorage.getItem('newsList')) || [];
                 // 每一条新闻，需要包含 新闻内容 和 发布的时间
                 // 把现在的事件处理成了 时间戳
                 var now = +new Date();
                 // console.log(now);
-                // 
+                // 每条新闻数据都是一个对象，有时间，有新闻内容。
                 var newsItem = {
                     // 每条数据的唯一标识
                     id: now,
@@ -81,14 +81,14 @@
                     content: res
                 }
 
-                // 往 newsList 新闻列表，添加一条新闻
-                                // 新闻数据需要前添加
-                                newsList.unshift(newsItem);
+                // 往 newsList 新闻列表，添加新的新闻对象数据
+                // 新闻数据需要前添加，使用unshift数组方法。
+                newsList.unshift(newsItem);
 
-                                // console.log(newsList);
-                // 保存到本地存储中
+                // console.log(newsList);
+                // 保存到本地存储中，需要把数组先转成字符串格式。
                 localStorage.setItem('newsList', JSON.stringify(newsList));
-
+                // 输出本地存储对象检查数据是否保存成功。
                 console.log(localStorage);
 
 
@@ -127,7 +127,6 @@
         // document.createElement() 小结：
         //      1. document.createElement() 对于创建一条数据来说，效率最高。
         //      2. innerHTML 适合修改元素内容。
-
     </script>
 </body>
 
