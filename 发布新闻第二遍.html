@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="点击发表言论">
+    <input type="text" value="" placeholder="请输入你想要说的...">
+    <ul>
+        <li>原本就有的评论<span class="cha">x</span></li>
+    </ul>
+    <script>
+        // 点击按钮发表新闻.
+        //      1. 获取按钮元素，获取输入框元素，获取ul元素
+        //      2. 事件三要素给 按钮添加 点击事件
+        //      3. 效果是：1. 获取输入框值   2. 再添加到 ul 列表中
+
+        // 1. 获取按钮元素，获取输入框元素，获取ul元素
+        var btn = document.querySelector('[type="button"]');
+        var txt = document.querySelector('[type="text"]');
+        var ul = document.querySelector('ul');
+
+        // 2. 事件三要素给 按钮添加 点击事件
+        btn.onclick = function () {
+            // 3. 效果是：1. 获取输入框值   2. 再添加到 ul 列表中
+            // 1. 获取输入框值
+            var res = txt.value;
+            if (res === '') {
+                alert("内容不能为空...");
+            } else {
+                // 2. 把内容添加到 ul 列表中
+                //  2.1 创建一个新的 li
+                var myLi = document.createElement('li');
+                //  2.2 往新的 li 中添加内容
+                myLi.innerHTML = res + '<span class="cha">x</span>';
+                //  2.3 把新创建的元素添加父盒子 ul 中
+                // ！！！后添加 - 如微信聊天界面
+                // ul.appendChild(myLi);
+                // ！！！前添加 - 如微信朋友圈
+                ul.insertBefore(myLi, ul.children[0]);
+                // 3. 清空输入框内容 - 要修改元素的内容，需要通过元素的属性修改
+                txt.value = '';
+            }
+        }
+        // 事件委派
+        ul.addEventListener("click", function (event) {
+            if (event.target.classList.contains('cha')) {
+                event.target.parentElement.remove()
+            }
+        })
+
+        // document.createElement() 小结：
+        //      1. document.createElement() 对于创建一条数据来说，效率最高。
+        //      2. innerHTML 适合修改元素内容。
+    </script>
+</body>
+
+</html>
