@@ -1,4 +1,3 @@
-@@ -0,0 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +12,7 @@
     <input type="button" value="点击发表言论">
     <input type="text" value="" placeholder="请输入你想要说的...">
     <ul>
+        <!-- <li>原本就有的评论<span class="cha">x</span></li> -->
         <li>原本就有的评论 <span class="cha">x</span></li>
     </ul>
     <script>
@@ -35,13 +35,16 @@
          *          5.0.1 因为发布新闻的代码前面已经写过，所以封装 发布新闻函数
          *          5.0.2 把封装后的 发布新闻函数 绑定给 按钮点击事件
          *          5.0.1 如果按下的是回车键，同样调用封装好的 发布新闻函数
-         */
+         */ /*      6.0   点击发布的时候把数据保存到本地
+                    7.0   在页面显示的时候，读取本地存储数据值，并显示到新闻列表中
+          */
 
 
         // 1. 获取按钮元素，获取输入框元素，获取ul元素
         var btn = document.querySelector('[type="button"]');
         var txt = document.querySelector('[type="text"]');
         var ul = document.querySelector('ul');
+        读取本地存储数据
 
         // 发布新闻的函数抽离
         var releaseNews = function () {
