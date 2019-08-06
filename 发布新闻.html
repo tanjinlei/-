@@ -1,3 +1,4 @@
+@@ -0,0 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,24 +63,36 @@
                 ul.insertBefore(myLi, ul.children[0]);
                 // 3. 清空输入框内容 - 要修改元素的内容，需要通过元素的属性修改
                 txt.value = '';
-            }
-            // 新建一个数组：存储数据
-            var newslist = [] || JSON.parse(localStorage.getItem('newslist'))
-            // 获取时间
-            var now = +new Date()
-            // 创建对象字面量
-            var newsitem = {
-                // 每条数据的id
-                id:now,
-                // 每条数据的内容
-                content:res,
-            }
-            // 往新闻列表前面添加新的新闻
-            newslist.unshift(newsitem)
-            console.log(newslist)
-            localStorage.setItem('newslist',JSON.stringify(newslist))
-            console.log(localStorage)
 
+                // 在新闻发布后，保存到本地存储中
+                //  1. 由于新闻较多，所以我们用数据格式保存数据
+                                // 再存放数据之前，先获取本地存储的数据，并解析数据
+                // 通过短路运算  ||  确保没有数据的时候，就默认赋值 [] 空数组
+                var newsList = JSON.parse(localStorage.getItem('newsList')) || [];
+                // 每一条新闻，需要包含 新闻内容 和 发布的时间
+                // 把现在的事件处理成了 时间戳
+                var now = +new Date();
+                // console.log(now);
+                // 
+                var newsItem = {
+                    // 每条数据的唯一标识
+                    id: now,
+                    // 每条数据的内容
+                    content: res
+                }
+
+                // 往 newsList 新闻列表，添加一条新闻
+                                // 新闻数据需要前添加
+                                newsList.unshift(newsItem);
+
+                                // console.log(newsList);
+                // 保存到本地存储中
+                localStorage.setItem('newsList', JSON.stringify(newsList));
+
+                console.log(localStorage);
+
+
+            }
 
         } // btn 的事件书写结束
 
