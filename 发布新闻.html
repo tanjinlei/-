@@ -44,8 +44,21 @@
         var btn = document.querySelector('[type="button"]');
         var txt = document.querySelector('[type="text"]');
         var ul = document.querySelector('ul');
-        读取本地存储数据
-
+        
+        // 读取本地存储数据
+        var newsList = JSON.parse(localStorage.getItem('newsList')) || []
+        console.log(newsList)
+        console.log(localStorage)
+        // 根据本地存储获取的新闻数组，动态创建对应的里，并添加到ul中
+        newsList.forEach(function(item,index){
+            console.log(item)
+            // 动态创建新的li
+            var newLi = document.createElement('li')
+            // 往li中写入新闻内容
+            newLi.innerHTML = item.content + '<span class="cha">x</span>'
+            // 把新的li添加到ul中
+            ul.appendChild(newLi)
+        })
         // 发布新闻的函数抽离
         var releaseNews = function () {
             // 3. 效果是：1. 获取输入框值   2. 再添加到 ul 列表中
