@@ -50,11 +50,11 @@
             // console.log(localStorage)
         // 根据本地存储获取的新闻数组，动态创建对应的里，并添加到ul中
         newsList.forEach(function(item,index){
-            // console.log(item)
+            console.log(item)
             // 动态创建新的li
             var newLi = document.createElement('li')
-            // 往li中写入新闻内容
-            newLi.innerHTML = item.content + '<span class="cha">x</span>'
+            // 往li中写入新闻内容,并将每个元素附上id
+            newLi.innerHTML = item.content + '<span class="cha" data-id="'+item.id+'">x</span>'
             // 把新的li添加到ul中
             ul.appendChild(newLi)
         })
@@ -69,8 +69,10 @@
                 // 2. 把内容添加到 ul 列表中
                 //  2.1 创建一个新的 li
                 var myLi = document.createElement('li');
+                // 把现在的事件处理成了 时间戳
+                var now = +new Date();
                 //  2.2 往新的 li 中添加内容
-                myLi.innerHTML = res + ' <span class="cha">x</span>';
+                myLi.innerHTML = res + '<span class="cha" data-id="'+item.id+'">x</span>';
                 //  2.3 把新创建的元素添加父盒子 ul 中
                 // ！！！后添加 - 如微信聊天界面
                 // ul.appendChild(myLi);
@@ -85,8 +87,7 @@
                 // 通过短路运算  ||  确保没有数据的时候，就默认赋值 [] 空数组
                 var newsList = JSON.parse(localStorage.getItem('newsList')) || [];
                 // 每一条新闻，需要包含 新闻内容 和 发布的时间
-                // 把现在的事件处理成了 时间戳
-                var now = +new Date();
+
                 // console.log(now);
                 // 每条新闻数据都是一个对象，有时间，有新闻内容。
                 var newsItem = {
@@ -118,7 +119,15 @@
         ul.addEventListener('click', function (event) {
             if (event.target.classList.contains('cha')) {
                 // console.log(this, event.target);
+                // 通过事件目标找到删除按钮，在通过parentElement找到对应的li.删除li
                 event.target.parentElement.remove();
+                // 还需要删除本地存储中的数据，可以通过删除按钮上id找到数据并删除
+                // 1.先获取本地存储数据
+                var newsList = JSON.parse(localStorage.getItem('newsList')) || []
+                // 2.通过id找到对应的数据
+                // 获取删除按钮上的唯一标识
+                var id = Number(event.target.dataset.id)
+                // 遍历数组的目的，查找那条数据需要被删除
             }
         });
 
