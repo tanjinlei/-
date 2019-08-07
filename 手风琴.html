@@ -64,22 +64,27 @@
     </div>
     <script>
         // window.addEventListener('load', function () {
-            var lis = document.querySelectorAll('li')
+        var lis = document.querySelectorAll('li')
 
-            // 遍历
+        // 遍历
+        for (i = 0; i < lis.length; i++) {
+            // 移入
+            var item = lis[i]
+            item.addEventListener('mouseover', function () {
+                // lis.forEach(function (item2, index2) {
+                //     item2.style.width = 50 + "px";
+                // });
+                for (i = 0; i < lis.length; i++) {
+                    lis[i].style.width = 50 + "px";
+                }
+                this.style.width = 800 + 'px'
+            })
+        }
+        item.addEventListener('mouseout', function () {
             for (i = 0; i < lis.length; i++) {
-                // 移入
-                var item = lis[i]
-                item.addEventListener('mouseover', function () {
-                    // lis.forEach(function (item2, index2) {
-                    //     item2.style.width = 50 + "px";
-                    // });
-                    for(i = 0; i < lis.length; i++){
-                        lis[i].style.width = 50 + "px";
-                    }
-                    this.style.width = 800 + 'px'
-                })
+                lis[i].style.width = 200 +"px"
             }
+        })
         // })
     </script>
 </body>
