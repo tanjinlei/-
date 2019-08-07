@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+div{
+    width: 200px;
+    height: 0px;
+    background-color: yellow;
+}
+</style>
+<body>
+    <button>按钮</button>
+    <div>
+        
+    </div>
+    <script>
+        // 获取元素
+        var divs = document.querySelector('div') 
+        var btn = document.querySelector('button') 
+        // 设置事件
+        var fl = true
+        var fn = function(){
+            // if(fl){
+            //     divs.style.height = 400 + 'px'
+            // }else{
+            //     divs.style.height = 0 + 'px'
+            // }
+            fl ? divs.style.height = 400 + 'px' : divs.style.height = 0 + 'px'
+            fl = !fl
+        }
+        btn.onclick = fn
+    </script>
+</body>
+</html>
