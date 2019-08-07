@@ -38,7 +38,7 @@
     </style>
 
     <script>
-   
+
     </script>
 </head>
 
@@ -62,6 +62,24 @@
             </li>
         </ul>
     </div>
+    <script>
+        window.addEventListener('load', function () {
+            var lis = document.querySelectorAll('li')
+
+            // 遍历
+            for (i = 0; i < lis.length; i++) {
+                // 移入
+                var item = lis[i]
+                item.addEventListener('mouseover', function () {
+                    // lis.forEach(function (item2, index2) {
+                    //     item2.style.width = 50 + "px";
+                    // });
+                    
+                    this.style.width = 800 + 'px'
+                })
+            }
+        })
+    </script>
 </body>
 
 </html>
